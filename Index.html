@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shed Builder 3D</title>
+  <meta name="description" content="Design metal sheds in 3D: set length, width, height, and roof pitch with realistic corrugated metal look." />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Shed Builder 3D</h1>
+      <nav class="nav">
+        <a href="#builder">Builder</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h2>Click. Drag. Done.</h2>
+        <p>Customize a metal farm shed with realistic corrugated walls and pitched roofs. Tune dimensions, preview in 3D, and export specs.</p>
+        <a class="cta" href="#builder">Start Building</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="builder" class="builder container">
+      <h3>Live 3D Shed Builder</h3>
+
+      <div class="controls">
+        <div class="control">
+          <label for="length">Length (ft) <span id="lengthVal">40</span></label>
+          <input id="length" type="range" min="10" max="150" step="1" value="40" />
+        </div>
+        <div class="control">
+          <label for="width">Width (ft) <span id="widthVal">24</span></label>
+          <input id="width" type="range" min="10" max="100" step="1" value="24" />
+        </div>
+        <div class="control">
+          <label for="height">Wall Height (ft) <span id="heightVal">12</span></label>
+          <input id="height" type="range" min="8" max="80" step="1" value="12" />
+        </div>
+        <div class="control">
+          <label for="pitch">Roof Pitch (rise per 12) <span id="pitchVal">4</span></label>
+          <input id="pitch" type="range" min="0" max="12" step="0.5" value="4" />
+        </div>
+      </div>
+
+      <div class="stage-wrap">
+        <canvas id="shedCanvas" aria-label="3D shed preview"></canvas>
+        <noscript>Please enable JavaScript to use the 3D builder.</noscript>
+        <div class="fallback" id="webglFallback" hidden>
+          Your device doesn’t support WebGL. You can still adjust options above and view a static preview later.
+        </div>
+      </div>
+
+      <div class="notes">
+        <p><strong>Limits:</strong> Max length 150’, width 100’, wall height 80’. Pitch shown as rise per 12.</p>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <h3>Why Shed Builder 3D?</h3>
+      <ul class="feature-grid">
+        <li>Realistic corrugated metal look (walls & roof)</li>
+        <li>Gable roof with adjustable pitch</li>
+        <li>Smooth orbit, pan, and zoom controls</li>
+        <li>Clean code ready for GitHub Pages or Replit</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Shed Builder 3D. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Three.js from unpkg CDN -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
